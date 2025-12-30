@@ -1,0 +1,131 @@
+/* Postranný hodnotenie panel - CSS */
+.rating-sidebar {
+    position: fixed;
+    left: -350px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+    transition: left 0.4s ease;
+}
+
+.rating-sidebar.open {
+    left: 0;
+}
+
+.sidebar-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-content {
+    width: 350px;
+    background: white;
+    border: 3px solid #f0c000;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.2);
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.sidebar-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.sidebar-subtitle {
+    font-size: 16px;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.rating-circle {
+    width: 120px;
+    height: 120px;
+    border: 6px solid #f0c000;
+    border-radius: 50%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.rating-number {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1;
+}
+
+.rating-stars-small {
+    color: #f0c000;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.rating-stars-main {
+    color: #f0c000;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.rating-count {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.rating-button {
+    display: inline-block;
+    background: #c8102e;
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.rating-button:hover {
+    background: #a00d25;
+}
+
+.sidebar-tab {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #f0c000;
+    color: #333;
+    padding: 80px 15px;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 0 8px 8px 0;
+}
+
+.sidebar-tab:hover {
+    right: -45px;
+    background: #d4a800;
+}
+
+@media (max-width: 768px) {
+    .rating-sidebar {
+        display: none;
+    }
+}
