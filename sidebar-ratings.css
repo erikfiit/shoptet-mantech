@@ -101,26 +101,26 @@
 
 .sidebar-tab {
     position: absolute;
-    right: -40px;
+    right: -30px;
     top: 50%;
     transform: translateY(-50%);
     background: #f0c000;
     color: white;
-    padding: 10px 8px;
+    padding: 8px;
     cursor: pointer;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
     border-radius: 0 8px 8px 0;
 }
 
 .sidebar-tab:hover {
-    right: -40px;
+    right: -30px;
     background: #d4a800;
 }
 
