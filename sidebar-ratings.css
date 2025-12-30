@@ -100,7 +100,7 @@
 
 .sidebar-tab {
     position: absolute;
-    right: -30px;
+    right: -40px;
     top: 50%;
     transform: translateY(-50%);
     background: #f0c000;
@@ -121,7 +121,7 @@
 }
 
 .sidebar-tab:hover {
-    right: -30px;
+    right: -40px;
     background: #d4a800;
 }
 
