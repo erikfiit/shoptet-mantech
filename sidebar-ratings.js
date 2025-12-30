@@ -22,4 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
             event.stopPropagation();
         });
     }
+
+     // Rozbalenie/zbalenie pri hover
+    const sidebar = document.getElementById('ratingSidebar');
+    if (sidebar) {
+        sidebar.addEventListener('mouseover', () => {
+            sidebar.classList.add('open');
+        });
+        sidebar.addEventListener('mouseout', () => {
+            sidebar.classList.remove('open');
+        });
+    }
 });
