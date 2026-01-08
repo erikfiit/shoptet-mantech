@@ -1,3 +1,81 @@
+.type-index {
+    .position--benefitHomepage .benefitBanner__item:nth-of-type(5) {
+      width: 100%;
+      flex: unset;
+      display: block;
+      margin-bottom: 30px;
+      margin-top: 30px;
+
+      .benefitBanner__picture {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+
+  .type-detail {
+    .custom-footer__banner23 { 
+      display: none !important;
+    }
+
+    .position--benefitProduct .benefitBanner__item:nth-of-type(5) {
+      width: 100%;
+      flex: unset;
+      display: block;
+      margin-bottom: 0;
+      margin-top: 10px;
+
+      .benefitBanner__picture {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    .position--benefitProduct .benefitBanner__item:last-of-type {
+      display: block;
+      flex: unset !important;
+      width: 100%;
+
+      .test {
+        .vote-content {
+          padding: 0 !important;
+          border: none !important;
+        }
+
+        .vote-summary {
+          text-align: left !important;
+        }
+
+        .votes-wrap {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          border: none !important;
+          @media screen and (max-width: 400px) {
+            flex-direction: column;
+          }
+        }
+
+        .vote-wrap {
+          border: none !important;
+          flex: 33.33%;
+          @media screen and (max-width: 991px) {
+            flex: 50%;
+          }
+        }
+
+        .ratings-in {
+          margin-top: 45px !important;
+        }
+
+        .vote-content {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+
 /* Postranný hodnotenie panel - CSS */
 .rating-sidebar {
     position: fixed;
