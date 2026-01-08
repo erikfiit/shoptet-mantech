@@ -74,22 +74,28 @@
                 lightboxImg.src = img.src;
                 lightbox.classList.add('active');
                 clearInterval(autoplayInterval);
+                document.body.style.overflow = 'hidden';
             }
         };
         
-        window.closeLightbox = function() {
+        window.closeLightbox = function(event) {
             const lightbox = document.getElementById('lightbox');
-            if (lightbox) {
+            if (lightbox && (event.target === lightbox || event.target.classList.contains('lightbox-close'))) {
                 lightbox.classList.remove('active');
+                document.body.style.overflow = '';
                 startAutoplay();
             }
         };
         
         // Klávesnica navigácia
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') window.moveCarousel(-1);
-            if (e.key === 'ArrowRight') window.moveCarousel(1);
-            if (e.key === 'Escape') window.closeLightbox();
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox && lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') window.closeLightbox({ target: lightbox });
+            } else {
+                if (e.key === 'ArrowLeft') window.moveCarousel(-1);
+                if (e.key === 'ArrowRight') window.moveCarousel(1);
+            }
         });
         
         // Swipe podpora pre mobil
