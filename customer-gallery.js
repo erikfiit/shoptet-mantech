@@ -34,6 +34,7 @@ const galleryConfig = {
     const slideWidth = 300;
     
     function initCarousel() {
+        console.log("initinitnint");
         const track = document.getElementById('carouselTrack');
         if (!track) return;
         
@@ -84,6 +85,13 @@ const galleryConfig = {
         function resetAutoplay() {
             clearInterval(autoplayInterval);
             startAutoplay();
+        }
+
+        function stopAutoplay() {
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+                autoplayInterval = null;
+            }
         }
         
         // Lightbox funkcie
