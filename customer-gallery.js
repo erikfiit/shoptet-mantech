@@ -110,7 +110,7 @@ const galleryConfig = {
                 document.body.style.overflow = '';
                 
                 // SPUSTIŤ animáciu carousel po zatvorení lightboxu
-                startAutoplay();
+                resetAutoplay();
             }
         };
         
