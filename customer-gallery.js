@@ -1,16 +1,47 @@
-// Customer Gallery Carousel - Multiple items
+// ========================================
+// KONFIGURÁCIA - SUPER JEDNODUCHÉ
+// ========================================
+
+const galleryConfig = {
+    // Base URL pre fotky
+    imageBaseUrl: 'https://www.mantech.sk/user/documents/upload/zakaznici/zakaznik_',
+    
+    // Prípona súboru
+    imageExtension: '.jpg',
+    
+    // Počet fotiek (od 1 do X)
+    totalImages: 41,
+    
+    // Zobraziť hviezdičky? (true/false)
+    showStars: true,
+    
+    // Počet hviezdičiek (1-5)
+    starRating: 5,
+    
+    // Rýchlosť autoplay v milisekundách
+    autoplaySpeed: 4000
+};
+
+// ========================================
+// HLAVNÁ LOGIKA - NEUPRAVUJ
+// ========================================
+
 (function() {
     'use strict';
     
     let currentPosition = 0;
     let autoplayInterval;
-    const slideWidth = 300; // 280px width + 20px gap
+    const slideWidth = 300;
     
     function initCarousel() {
-        const slides = document.querySelectorAll('.carousel-slide');
         const track = document.getElementById('carouselTrack');
+        if (!track) return;
         
-        if (!slides.length || !track) return;
+        // Vygenerovanie slides
+        generateSlides();
+        
+        const slides = document.querySelectorAll('.carousel-slide');
+        if (!slides.length) return;
         
         // Posun carousel
         window.moveCarousel = function(direction) {
@@ -19,7 +50,6 @@
             
             currentPosition += (direction * slideWidth);
             
-            // Limitovanie posunu
             if (currentPosition < 0) {
                 currentPosition = 0;
             } else if (currentPosition > maxScroll) {
@@ -30,12 +60,10 @@
             resetAutoplay();
         };
         
-        // Update carousel pozície
         function updateCarousel() {
             track.style.transform = `translateX(-${currentPosition}px)`;
         }
         
-        // Autoplay - posun o jeden item
         function startAutoplay() {
             autoplayInterval = setInterval(() => {
                 const containerWidth = track.parentElement.offsetWidth;
@@ -43,13 +71,12 @@
                 
                 currentPosition += slideWidth;
                 
-                // Reset na začiatok ak sme na konci
                 if (currentPosition > maxScroll) {
                     currentPosition = 0;
                 }
                 
                 updateCarousel();
-            }, 4000); // Každé 4 sekundy
+            }, galleryConfig.autoplaySpeed);
         }
         
         function resetAutoplay() {
@@ -80,7 +107,7 @@
             }
         };
         
-        // Klávesnica navigácia
+        // Klávesnica
         document.addEventListener('keydown', (e) => {
             const lightbox = document.getElementById('lightbox');
             if (lightbox && lightbox.classList.contains('active')) {
@@ -91,7 +118,7 @@
             }
         });
         
-        // Swipe podpora pre mobil
+        // Swipe
         let touchStartX = 0;
         let touchEndX = 0;
         
@@ -113,11 +140,48 @@
             }
         }
         
-        // Spustenie autoplay
         startAutoplay();
     }
     
-    // Inicializácia po načítaní DOM
+    // Funkcia na generovanie slides - AUTOMATICKY OD 1 do totalImages
+    function generateSlides() {
+        const track = document.getElementById('carouselTrack');
+        if (!track) return;
+        
+        track.innerHTML = '';
+        
+        const stars = '★'.repeat(galleryConfig.starRating) + '☆'.repeat(5 - galleryConfig.starRating);
+        
+        // Vytvor slide pre každú fotku od 1 do totalImages
+        for (let i = 1; i <= galleryConfig.totalImages; i++) {
+            const slide = document.createElement('div');
+            slide.className = 'carousel-slide';
+            slide.onclick = () => window.openLightbox(i - 1);
+            
+            const img = document.createElement('img');
+            img.src = galleryConfig.imageBaseUrl + i + galleryConfig.imageExtension;
+            img.alt = 'Fotka od zákazníka ' + i;
+            
+            // Fallback ak sa obrázok nenačíta
+            img.onerror = function() {
+                this.style.display = 'none';
+                slide.style.display = 'none';
+            };
+            
+            slide.appendChild(img);
+            
+            if (galleryConfig.showStars) {
+                const starsDiv = document.createElement('div');
+                starsDiv.className = 'slide-stars';
+                starsDiv.textContent = stars;
+                slide.appendChild(starsDiv);
+            }
+            
+            track.appendChild(slide);
+        }
+    }
+    
+    // Inicializácia
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initCarousel);
     } else {
