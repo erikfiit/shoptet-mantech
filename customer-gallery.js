@@ -18,8 +18,8 @@ const galleryConfig = {
     // Počet hviezdičiek (1-5)
     starRating: 5,
     
-    // Rýchlosť autoplay v milisekundách
-    autoplaySpeed: 4000
+    // Rýchlosť autoplay v milisekundách (dlhší čas = pomalšie posúvanie)
+    autoplaySpeed: 5000  // 5 sekúnd (predtým 4000)
 };
 
 // ========================================
@@ -57,6 +57,8 @@ const galleryConfig = {
             }
             
             updateCarousel();
+            
+            // Reset autoplay - začne počítať odznova od tejto chvíle
             resetAutoplay();
         };
         
@@ -93,7 +95,10 @@ const galleryConfig = {
             if (img && lightboxImg && lightbox) {
                 lightboxImg.src = img.src;
                 lightbox.classList.add('active');
-                clearInterval(autoplayInterval);
+                
+                // ZASTAVIŤ animáciu carousel pri otvorení lightboxu
+                stopAutoplay();
+                
                 document.body.style.overflow = 'hidden';
             }
         };
@@ -103,6 +108,8 @@ const galleryConfig = {
             if (lightbox && (event.target === lightbox || event.target.classList.contains('lightbox-close'))) {
                 lightbox.classList.remove('active');
                 document.body.style.overflow = '';
+                
+                // SPUSTIŤ animáciu carousel po zatvorení lightboxu
                 startAutoplay();
             }
         };
@@ -118,7 +125,7 @@ const galleryConfig = {
             }
         });
         
-        // Swipe
+        // Swipe podpora pre mobil
         let touchStartX = 0;
         let touchEndX = 0;
         
@@ -134,12 +141,15 @@ const galleryConfig = {
         function handleSwipe() {
             if (touchStartX - touchEndX > 50) {
                 window.moveCarousel(1);
+                // moveCarousel už volá resetAutoplay()
             }
             if (touchEndX - touchStartX > 50) {
                 window.moveCarousel(-1);
+                // moveCarousel už volá resetAutoplay()
             }
         }
         
+        // Spustenie autoplay pri načítaní
         startAutoplay();
     }
     
