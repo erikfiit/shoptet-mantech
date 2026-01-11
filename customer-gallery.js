@@ -1,42 +1,29 @@
-// Customer Gallery Carousel
+// Customer Gallery Carousel - Multiple items
 (function() {
     'use strict';
     
-    let currentSlide = 0;
+    let currentPosition = 0;
     let autoplayInterval;
+    const slideWidth = 300; // 280px width + 20px gap
     
     function initCarousel() {
         const slides = document.querySelectorAll('.carousel-slide');
         const track = document.getElementById('carouselTrack');
-        const dotsContainer = document.getElementById('carouselDots');
         
-        if (!slides.length || !track || !dotsContainer) return;
-        
-        // Vytvorenie dots
-        slides.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.className = 'dot';
-            if (index === 0) dot.classList.add('active');
-            dot.onclick = () => goToSlide(index);
-            dotsContainer.appendChild(dot);
-        });
-        
-        const dots = document.querySelectorAll('.dot');
-        
-        // Presun na konkrétny slide
-        window.goToSlide = function(index) {
-            currentSlide = index;
-            updateCarousel();
-        };
+        if (!slides.length || !track) return;
         
         // Posun carousel
         window.moveCarousel = function(direction) {
-            currentSlide += direction;
+            const containerWidth = track.parentElement.offsetWidth;
+            const maxScroll = (slides.length * slideWidth) - containerWidth;
             
-            if (currentSlide < 0) {
-                currentSlide = slides.length - 1;
-            } else if (currentSlide >= slides.length) {
-                currentSlide = 0;
+            currentPosition += (direction * slideWidth);
+            
+            // Limitovanie posunu
+            if (currentPosition < 0) {
+                currentPosition = 0;
+            } else if (currentPosition > maxScroll) {
+                currentPosition = maxScroll;
             }
             
             updateCarousel();
@@ -45,18 +32,24 @@
         
         // Update carousel pozície
         function updateCarousel() {
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
+            track.style.transform = `translateX(-${currentPosition}px)`;
         }
         
-        // Autoplay
+        // Autoplay - posun o jeden item
         function startAutoplay() {
             autoplayInterval = setInterval(() => {
-                window.moveCarousel(1);
-            }, 5000);
+                const containerWidth = track.parentElement.offsetWidth;
+                const maxScroll = (slides.length * slideWidth) - containerWidth;
+                
+                currentPosition += slideWidth;
+                
+                // Reset na začiatok ak sme na konci
+                if (currentPosition > maxScroll) {
+                    currentPosition = 0;
+                }
+                
+                updateCarousel();
+            }, 4000); // Každé 4 sekundy
         }
         
         function resetAutoplay() {
