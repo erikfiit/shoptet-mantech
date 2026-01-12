@@ -168,7 +168,7 @@ const galleryConfig = {
         
         track.innerHTML = '';
         
-        const stars = '★'.repeat(galleryConfig.starRating) + '☆'.repeat(5 - galleryConfig.starRating);
+        // const stars = '★'.repeat(galleryConfig.starRating) + '☆'.repeat(5 - galleryConfig.starRating);
         
         // Vytvor slide pre každú fotku od 1 do totalImages
         for (let i = 1; i <= galleryConfig.totalImages; i++) {
@@ -188,12 +188,12 @@ const galleryConfig = {
             
             slide.appendChild(img);
             
-            if (galleryConfig.showStars) {
-                const starsDiv = document.createElement('div');
-                starsDiv.className = 'slide-stars';
-                starsDiv.textContent = stars;
-                slide.appendChild(starsDiv);
-            }
+            // if (galleryConfig.showStars) {
+            //     const starsDiv = document.createElement('div');
+            //     starsDiv.className = 'slide-stars';
+            //     starsDiv.textContent = stars;
+            //     slide.appendChild(starsDiv);
+            // }
             
             track.appendChild(slide);
         }
