@@ -13,7 +13,7 @@ const galleryConfig = {
     totalImages: 41,
     
     // Zobraziť hviezdičky? (true/false)
-    showStars: true,
+    showStars: false,
     
     // Počet hviezdičiek (1-5)
     starRating: 5,
