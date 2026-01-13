@@ -15,10 +15,6 @@
 
 
   .type-detail {
-    .custom-footer__banner23 { 
-      display: none !important;
-    }
-
     .position--benefitProduct .benefitBanner__item:nth-of-type(5) {
       width: 100%;
       flex: unset;
