@@ -249,6 +249,7 @@
         /* Text */
         .widget-text {
             flex: 1;
+            padding: 20px !important;
         }
 
         .widget-text h3 {
