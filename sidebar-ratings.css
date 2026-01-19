@@ -229,6 +229,12 @@
             display: flex;
             align-items: center;
             gap: 25px;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                padding: 10px;
+                gap: 0;
+            }
         }
 
         /* Avatar */
