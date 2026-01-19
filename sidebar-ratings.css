@@ -204,3 +204,87 @@
         display: none;
     }
 }
+
+
+
+.product-contact-widget {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-contact-widget::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .widget-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* Avatar */
+        .widget-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        /* Text */
+        .widget-text {
+            flex: 1;
+        }
+
+        .widget-text h3 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .widget-text p {
+            color: rgba(255,255,255,0.9);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Tlačidlo */
+        .widget-button {
+            padding: 12px 30px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .widget-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .widget-button:active {
+            transform: translateY(0);
+        }
