@@ -15,17 +15,12 @@
 
 
   .type-detail {
-    .position--benefitProduct .benefitBanner__item:nth-of-type(5) {
-      width: 100%;
-      flex: unset;
-      display: block;
-      margin-bottom: 0;
-      margin-top: 10px;
-
-      .benefitBanner__picture {
-        width: 100%;
-        max-width: 100%;
-      }
+    .position--benefitProduct {
+        .benefitBanner__item:first-of-type {
+            display: block;
+            width: 100%;
+            flex: unset;
+        }
     }
 
     .position--benefitProduct .benefitBanner__item:last-of-type {
