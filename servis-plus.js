@@ -20,16 +20,14 @@ function initServisPlus() {
             badge.innerHTML = `
                 <div class="servis-plus-icon">
                     <div class="servis-plus-text">
-                        SERVIS<br>
-                        <span class="servis-plus-subtitle">Plus</span>
+                        GARANCIA<br>
+                        <span class="servis-plus-subtitle">Servisu</span>
                     </div>
                 </div>
             `;
             
             // Pridaj do image wrapperu
-            imageWrapper.appendChild(badge);
-            
-            console.log('Servis Plus: Ikona úspešne pridaná');
+            imageWrapper.appendChild(badge);     
         }
 
         // Otvorenie modalu
