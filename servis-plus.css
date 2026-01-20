@@ -1,0 +1,301 @@
+.servis-plus-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 100;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .servis-plus-badge:hover {
+            transform: scale(1.1);
+        }
+
+        .servis-plus-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            position: relative;
+            border: 3px solid white;
+        }
+
+        .servis-plus-icon::before {
+            content: '🔧';
+            font-size: 28px;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .servis-plus-text {
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+            line-height: 1.1;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .servis-plus-subtitle {
+            font-size: 10px;
+            opacity: 0.95;
+        }
+
+        /* Zabezpečenie že parent má position relative */
+        .p-image-wrapper,
+        .product-image-wrapper,
+        .product-gallery {
+            position: relative !important;
+        }
+
+        /* ========================================
+           MODAL DIALOG
+           ======================================== */
+        
+        .servis-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .servis-modal.active {
+            display: flex;
+        }
+
+        .servis-modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header */
+        .servis-modal-header {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 12px 12px 0 0;
+            position: relative;
+        }
+
+        .servis-modal-header h2 {
+            margin: 0 0 5px 0;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .servis-modal-header p {
+            margin: 0;
+            opacity: 0.95;
+            font-size: 15px;
+        }
+
+        /* Close button */
+        .servis-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            line-height: 1;
+        }
+
+        .servis-modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        /* Body */
+        .servis-modal-body {
+            padding: 30px;
+        }
+
+        .servis-section {
+            margin-bottom: 25px;
+        }
+
+        .servis-section h3 {
+            color: #ff6b35;
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .servis-section p {
+            color: #555;
+            line-height: 1.7;
+            margin: 0 0 10px 0;
+            font-size: 15px;
+        }
+
+        .servis-section ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .servis-section li {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        /* Highlight box */
+        .servis-highlight {
+            background: #fff3e0;
+            border-left: 4px solid #ff6b35;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .servis-highlight strong {
+            color: #ff6b35;
+            font-size: 16px;
+        }
+
+        /* Price info */
+        .servis-price {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .servis-price-label {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .servis-price-amount {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff6b35;
+            margin: 5px 0;
+        }
+
+        .servis-price-note {
+            font-size: 13px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        /* Benefits list */
+        .servis-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .servis-benefit-item {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+        }
+
+        .servis-benefit-icon {
+            width: 24px;
+            height: 24px;
+            background: #ff6b35;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .servis-benefit-text {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .servis-plus-badge {
+                top: 10px;
+                left: 10px;
+            }
+
+            .servis-plus-icon {
+                width: 70px;
+                height: 70px;
+                border: 2px solid white;
+            }
+
+            .servis-plus-icon::before {
+                font-size: 22px;
+                margin-bottom: 2px;
+            }
+
+            .servis-plus-text {
+                font-size: 10px;
+            }
+
+            .servis-plus-subtitle {
+                font-size: 8px;
+            }
+
+            .servis-modal-content {
+                margin: 0;
+                border-radius: 0;
+                max-height: 100vh;
+            }
+
+            .servis-modal-header {
+                border-radius: 0;
+            }
+
+            .servis-modal-body {
+                padding: 20px;
+            }
+
+            .servis-benefits {
+                grid-template-columns: 1fr;
+            }
+        }
