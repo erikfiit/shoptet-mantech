@@ -43,16 +43,10 @@
   }
 }
 
-.auth-banner-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
 /* Badge v banneri (namiesto obrázka) */
 .auth-banner-badge {
-  width: 80px;
-  height: 80px;
+  width: 85px;
+  height: 85px;
   flex-shrink: 0;
   margin-right: 15px;
   position: relative;
@@ -101,7 +95,7 @@
   color: #fff;
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 800;
-  font-size: 11px;
+  font-size: 9px;
   line-height: 1.1;
   text-transform: uppercase;
   letter-spacing: 0.3px;
@@ -114,10 +108,10 @@
 .auth-banner-badge-text::before {
   content: '★';
   display: block;
-  font-size: 22px;
+  font-size: 18px;
   color: #ffd700;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   animation: starPulse 2s ease-in-out infinite;
 }
 
