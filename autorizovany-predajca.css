@@ -43,12 +43,6 @@
   }
 }
 
-.auth-banner-content:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.25);
-  border-color: #20c997;
-}
-
 .auth-banner-link {
   text-decoration: none;
   color: inherit;
@@ -100,10 +94,6 @@
   50% {
     transform: translate(20%, 20%);
   }
-}
-
-.auth-banner-content:hover .auth-banner-badge-icon {
-  transform: scale(1.1) rotate(5deg);
 }
 
 .auth-banner-badge-text {
@@ -186,10 +176,6 @@
   height: 100px;
   cursor: pointer;
   transition: transform 0.3s ease;
-}
-
-.auth-dealer-badge:hover {
-  transform: scale(1.05) rotate(-5deg);
 }
 
 .auth-dealer-icon {
