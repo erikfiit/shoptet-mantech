@@ -1,11 +1,11 @@
 // Konfigurácia banneru
 const bannerConfig = {
   title: 'Autorizovaný predajca',
-  subtitle: 'Originálne produkty s garenciou',
+  subtitle: 'Nakupujete u autorizovaného predajcu. Overená kvalita, profesionálny servis a okamžitá technická pomoc aj cez videohovor. Istota bez starostí.',
   link: '', // Voliteľné - ak chceš aby bol banner klikateľný
   
   // Text v badge kruhu
-  badgeText: 'AUTORI-<br>ZOVANÝ',
+  badgeText: 'AUTORIZOVANÝ',
   badgeSubtext: 'PREDAJCA'
 };
 
