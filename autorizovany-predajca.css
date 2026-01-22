@@ -21,28 +21,6 @@
   overflow: hidden;
 }
 
-.auth-banner-content::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(40, 167, 69, 0.05) 0%, transparent 70%);
-  animation: pulse 3s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-}
-
 /* Badge v banneri (namiesto obrázka) */
 .auth-banner-badge {
   width: 85px;
@@ -68,28 +46,6 @@
   transition: transform 0.3s ease;
 }
 
-/* Gradient pozadie */
-.auth-banner-badge-icon::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
-  animation: badgeShine 4s ease-in-out infinite;
-  z-index: 1;
-}
-
-@keyframes badgeShine {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(20%, 20%);
-  }
-}
-
 .auth-banner-badge-text {
   text-align: center;
   color: #fff;
@@ -102,28 +58,7 @@
   z-index: 3;
   position: relative;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Jedna hviezda NAD textom */
-.auth-banner-badge-text::before {
-  content: '★';
-  display: block;
-  font-size: 18px;
-  color: #ffd700;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  margin-bottom: 5px;
-  animation: starPulse 2s ease-in-out infinite;
-}
-
-@keyframes starPulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.15) rotate(10deg);
-    opacity: 0.95;
-  }
+  margin-top: 5px;
 }
 
 .auth-banner-badge-subtitle {
@@ -184,26 +119,6 @@
   border: 3px solid #fff;
   position: relative;
   overflow: hidden;
-}
-
-.auth-dealer-icon::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-  animation: shine 4s ease-in-out infinite;
-}
-
-@keyframes shine {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(20%, 20%);
-  }
 }
 
 .auth-dealer-text {
