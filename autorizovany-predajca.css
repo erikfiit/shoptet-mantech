@@ -1,7 +1,7 @@
 /* Banner autorizovaného predajcu - podobný štýl ako servis badge */
 .auth-dealer-banner {
   position: relative;
-  margin-top: 25px;
+  margin-bottom: 25px;
   padding: 0;
   background: transparent;
   border: none;
@@ -76,19 +76,21 @@
   box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
   border: 3px solid #fff;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   transition: transform 0.3s ease;
 }
 
-.auth-banner-badge-icon::before {
+/* Gradient pozadie */
+.auth-banner-badge-icon::after {
   content: '';
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
   animation: badgeShine 4s ease-in-out infinite;
+  z-index: 1;
 }
 
 @keyframes badgeShine {
@@ -113,9 +115,31 @@
   line-height: 1.1;
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  z-index: 1;
+  z-index: 3;
   position: relative;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Jedna hviezda NAD textom */
+.auth-banner-badge-text::before {
+  content: '★';
+  display: block;
+  font-size: 22px;
+  color: #ffd700;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  margin-bottom: 3px;
+  animation: starPulse 2s ease-in-out infinite;
+}
+
+@keyframes starPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15) rotate(10deg);
+    opacity: 0.95;
+  }
 }
 
 .auth-banner-badge-subtitle {
