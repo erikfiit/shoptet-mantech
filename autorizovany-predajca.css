@@ -55,20 +55,75 @@
   display: block;
 }
 
-.auth-banner-img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
+/* Badge v banneri (namiesto obrázka) */
+.auth-banner-badge {
+  width: 80px;
+  height: 80px;
   flex-shrink: 0;
   margin-right: 15px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-  transition: transform 0.3s ease;
   position: relative;
   z-index: 1;
 }
 
-.auth-banner-content:hover .auth-banner-img {
+.auth-banner-badge-icon {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+  border: 3px solid #fff;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.auth-banner-badge-icon::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  animation: badgeShine 4s ease-in-out infinite;
+}
+
+@keyframes badgeShine {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20%, 20%);
+  }
+}
+
+.auth-banner-content:hover .auth-banner-badge-icon {
   transform: scale(1.1) rotate(5deg);
+}
+
+.auth-banner-badge-text {
+  text-align: center;
+  color: #fff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  z-index: 1;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.auth-banner-badge-subtitle {
+  font-size: 9px;
+  font-weight: 700;
+  display: block;
+  margin-top: 2px;
+  opacity: 0.95;
 }
 
 .auth-banner-text {
@@ -175,10 +230,18 @@
     padding: 15px;
   }
   
-  .auth-banner-img {
-    width: 55px;
-    height: 55px;
+  .auth-banner-badge {
+    width: 65px;
+    height: 65px;
     margin-right: 12px;
+  }
+  
+  .auth-banner-badge-text {
+    font-size: 10px;
+  }
+  
+  .auth-banner-badge-subtitle {
+    font-size: 8px;
   }
   
   .auth-banner-text h3 {
@@ -212,9 +275,9 @@
     padding: 20px 15px;
   }
   
-  .auth-banner-img {
-    width: 60px;
-    height: 60px;
+  .auth-banner-badge {
+    width: 70px;
+    height: 70px;
     margin-right: 0;
     margin-bottom: 12px;
   }
