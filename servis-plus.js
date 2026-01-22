@@ -21,7 +21,7 @@ function initServisPlus() {
                 <div class="servis-plus-icon">
                     <div class="servis-plus-text">
                         GARANCIA<br>
-                        <span class="servis-plus-subtitle">Servisu</span>
+                        <span class="servis-plus-subtitle">SERVISU</span>
                     </div>
                 </div>
             `;
