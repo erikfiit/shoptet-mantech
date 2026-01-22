@@ -156,7 +156,7 @@
   }
   
   .auth-banner-badge-text {
-    font-size: 10px;
+    font-size: 7px;
   }
   
   .auth-banner-badge-subtitle {
@@ -191,7 +191,6 @@
   .auth-banner-content {
     flex-direction: column;
     text-align: center;
-    padding: 20px 15px;
   }
   
   .auth-banner-badge {
