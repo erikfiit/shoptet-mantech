@@ -261,6 +261,7 @@
             font-size: 22px;
             margin-bottom: 8px;
             font-weight: bold;
+            margin-top: 10px !important;
         }
 
         .widget-text p {
