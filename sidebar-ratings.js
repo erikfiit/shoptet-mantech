@@ -44,30 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
         '[data-testid="productInquiryButton"], ' +
         '.product-inquiry-button, ' +
         'a[href*=":otazka/"], ' +
-        'button[data-product-inquiry]'
-    );
-    
-    if (shoptetButton) {
-        shoptetButton.click();
-    } else {
-        // Fallback - scrolluj na Shoptet formulár ak existuje
-        const form = document.querySelector('.product-inquiry-form, #product-inquiry');
-        if (form) {
-            form.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            alert('Formulár pre otázky k produktu nie je dostupný. Kontaktujte nás priamo na info@mantech.sk');
-        }
-    }
- }
-
-function openShoptetFormCz(event) {
-    event.preventDefault();
-    
-    // Shoptet má rôzne selektory podľa verzie šablóny
-    // Skús nájsť tlačidlo "Opýtať sa na produkt"
-    const shoptetButton = document.querySelector(
-        '[data-testid="productInquiryButton"], ' +
-        '.product-inquiry-button, ' +
         'a[href*=":dotaz/"], ' +
         'button[data-product-inquiry]'
     );
@@ -80,7 +56,7 @@ function openShoptetFormCz(event) {
         if (form) {
             form.scrollIntoView({ behavior: 'smooth' });
         } else {
-            alert('Kontaktujte nás primo pres info@mantech.sk');
+            alert('Formulár pre otázky k produktu nie je dostupný. Kontaktujte nás priamo na info@mantech.sk');
         }
     }
  }
