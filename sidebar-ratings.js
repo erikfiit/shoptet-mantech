@@ -59,3 +59,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
  }
+
+function openShoptetFormCz(event) {
+    event.preventDefault();
+    
+    // Shoptet má rôzne selektory podľa verzie šablóny
+    // Skús nájsť tlačidlo "Opýtať sa na produkt"
+    const shoptetButton = document.querySelector(
+        '[data-testid="productInquiryButton"], ' +
+        '.product-inquiry-button, ' +
+        'a[href*=":dotaz/"], ' +
+        'button[data-product-inquiry]'
+    );
+    
+    if (shoptetButton) {
+        shoptetButton.click();
+    } else {
+        // Fallback - scrolluj na Shoptet formulár ak existuje
+        const form = document.querySelector('.product-inquiry-form, #product-inquiry');
+        if (form) {
+            form.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            alert('Kontaktujte nás primo pres info@mantech.sk');
+        }
+    }
+ }
