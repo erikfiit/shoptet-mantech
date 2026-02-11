@@ -20,7 +20,7 @@ function initServisPlus() {
             badge.innerHTML = `
                 <div class="servis-plus-icon">
                     <div class="servis-plus-text">
-                        GARANCIA<br>
+                        GARANCE<br>
                         <span class="servis-plus-subtitle">SERVISU</span>
                     </div>
                 </div>
