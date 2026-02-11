@@ -1,12 +1,12 @@
 // Konfigurácia banneru
 const bannerConfig = {
-  title: 'Autorizovaný predajca',
-  subtitle: 'Nakupujete u autorizovaného predajcu. Overená kvalita, profesionálny servis a okamžitá technická pomoc aj cez videohovor. Istota bez starostí.',
+  title: 'Autorizovaný prodejce',
+  subtitle: 'Nakupujete u autorizovaného prodejce. Ověřená kvalita, profesionální servis a okamžitá technická pomoc, dokonce i prostřednictvím videohovoru. Klid a jistota bez starostí.',
   link: '', // Voliteľné - ak chceš aby bol banner klikateľný
   
   // Text v badge kruhu
   badgeText: 'AUTORIZOVANÝ',
-  badgeSubtext: 'PREDAJCA'
+  badgeSubtext: 'PRODEJCE'
 };
 
 // Funkcia na vytvorenie banneru S BADGE namiesto obrázka
@@ -50,7 +50,6 @@ function insertAuthBanner() {
       // Vlož banner PRED availability-value
       availabilityDiv.insertAdjacentElement('beforebegin', banner);
       
-      console.log('✓ Banner autorizovaného predajcu pridaný pred availability-value');
     }
   } else {
     console.log('⚠ availability-value nenájdený');
