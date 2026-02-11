@@ -1,0 +1,215 @@
+/* Banner autorizovaného predajcu - podobný štýl ako servis badge */
+.auth-dealer-banner {
+  position: relative;
+  margin-bottom: 25px;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.auth-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 3px solid #28a745;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Badge v banneri (namiesto obrázka) */
+.auth-banner-badge {
+  width: 85px;
+  height: 85px;
+  flex-shrink: 0;
+  margin-right: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-banner-badge-icon {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+  border: 3px solid #fff;
+  position: relative;
+  overflow: visible;
+  transition: transform 0.3s ease;
+}
+
+.auth-banner-badge-text {
+  text-align: center;
+  color: #fff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: 9px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  z-index: 3;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 5px;
+}
+
+.auth-banner-badge-subtitle {
+  font-size: 9px;
+  font-weight: 700;
+  display: block;
+  margin-top: 2px;
+  opacity: 0.95;
+}
+
+.auth-banner-text {
+  flex: 1;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-banner-text h3 {
+  margin: 0 0 5px 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #28a745;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.auth-banner-text p {
+  margin: 0;
+  font-size: 13px;
+  color: #6c757d;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+/* Badge varianta - alternatívny štýl */
+.auth-dealer-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.auth-dealer-icon {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+  border: 3px solid #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-dealer-text {
+  text-align: center;
+  color: #fff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  z-index: 1;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.auth-dealer-subtitle {
+  font-size: 9px;
+  font-weight: 700;
+  display: block;
+  margin-top: 2px;
+  opacity: 0.95;
+}
+
+/* Responzívnosť */
+@media (max-width: 768px) {
+  .auth-banner-content {
+    padding: 15px;
+  }
+  
+  .auth-banner-badge {
+    width: 65px;
+    height: 65px;
+    margin-right: 12px;
+  }
+  
+  .auth-banner-badge-text {
+    font-size: 7px;
+  }
+  
+  .auth-banner-badge-subtitle {
+    font-size: 8px;
+  }
+  
+  .auth-banner-text h3 {
+    font-size: 17px;
+  }
+  
+  .auth-banner-text p {
+    font-size: 12px;
+  }
+  
+  .auth-dealer-badge {
+    width: 85px;
+    height: 85px;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .auth-dealer-text {
+    font-size: 10px;
+  }
+  
+  .auth-dealer-subtitle {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .auth-banner-badge {
+    width: 70px;
+    height: 70px;
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+  
+  .auth-banner-text {
+    text-align: center;
+  }
+  
+  .auth-dealer-badge {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .auth-dealer-text {
+    font-size: 9px;
+  }
+}
