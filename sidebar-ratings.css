@@ -324,8 +324,11 @@
         flex-wrap: wrap;
         justify-content: center;
         padding-bottom: 16px;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
     }
     .widget-phone-input {
-        width: 140px;
+        width: 240px;
     }
 }
