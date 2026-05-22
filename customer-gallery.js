@@ -171,7 +171,7 @@ const galleryConfig = {
         // const stars = '★'.repeat(galleryConfig.starRating) + '☆'.repeat(5 - galleryConfig.starRating);
         
         // Vytvor slide pre každú fotku od 1 do totalImages
-        for (let i = 1; i <= galleryConfig.totalImages; i++) {
+        for (let i = 0; i <= galleryConfig.totalImages; i++) {
             const slide = document.createElement('div');
             slide.className = 'carousel-slide';
             slide.onclick = () => window.openLightbox(i - 1);
