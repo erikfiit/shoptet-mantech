@@ -243,9 +243,6 @@
 .widget-text {
     flex: 1;
     padding: 20px !important;
-    @media (max-width: 768px) {
-        text-align: center;
-    }
 }
 .widget-text h3 {
     color: white;
@@ -271,17 +268,17 @@
     border: 2px solid white;
     border-radius: 8px;
     font-size: 14px;
-    background: rgba(255,255,255,0.15);
-    color: white;
+    background: white;
+    color: #1a1a1a;
     outline: none;
     width: 160px;
     transition: all 0.3s;
 }
 .widget-phone-input::placeholder {
-    color: rgba(255,255,255,0.7);
+    color: #999;
 }
 .widget-phone-input:focus {
-    background: rgba(255,255,255,0.25);
+    background: white;
     border-color: white;
 }
 .widget-button {
